@@ -1,5 +1,6 @@
 package com.pagesofflavor;
-
+import io.github.cdimascio.dotenv.Dotenv;
+import io.github.cdimascio.dotenv.DotenvEntry;
 import com.pagesofflavor.models.Book;
 import com.pagesofflavor.repositories.BookRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -17,8 +18,9 @@ import java.util.Map;
 public class PagesOfFlavorApplication {
 
     public static void main(String[] args) {
-
-        SpringApplication.run(PagesOfFlavorApplication.class, args);
+		Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
+		dotenv.entries().forEach(e -> System.setProperty(e.getKey(), e.getValue()));
+		SpringApplication.run(PagesOfFlavorApplication.class, args);
     }
 	@Bean
 	CommandLineRunner loadData(BookRepository repo) {
