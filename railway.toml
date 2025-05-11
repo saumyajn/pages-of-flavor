@@ -1,0 +1,11 @@
+[build]
+  command = "./mvnw clean package -DskipTests"
+
+[deploy]
+  command = "java -jar target/*.jar"
+
+[env]
+  DATABASE_URL=jdbc:postgresql://crossover.proxy.rlwy.net:22477/railway
+  PGUSER = postgres
+  PGPASSWORD = XvivEsuZZixKVEuTVcJRAocshqbRJhGp
+  JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
