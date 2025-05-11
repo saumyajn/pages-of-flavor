@@ -21,7 +21,9 @@ public class PagesOfFlavorApplication {
 		Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
 		dotenv.entries().forEach(e -> System.setProperty(e.getKey(), e.getValue()));
 		SpringApplication.run(PagesOfFlavorApplication.class, args);
-    }
+		System.out.println("DB_URL = " + System.getenv("DATABASE_URL"));
+
+	}
 	@Bean
 	CommandLineRunner loadData(BookRepository repo) {
 		return args -> {
