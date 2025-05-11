@@ -10,6 +10,8 @@ public class Book {
     private Long id;
     private String title;
     private String type;
+    @Column(name = "cover_image")
+    private String coverImage;
 
     // Constructors
     public Book() {
@@ -42,5 +44,13 @@ public class Book {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getCoverImage() {
+        return coverImage;
+    }
+
+    public void setCoverImage(String coverImage) {
+        this.coverImage = coverImage;
     }
 }
