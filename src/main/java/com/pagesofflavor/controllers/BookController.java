@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins = "https://pages-of-flavor-production-0aa1.up.railway.app/")
+@CrossOrigin(origins = "https://pages-of-flavor.vercel.app")
 @RestController
 @RequestMapping("/api/books")
 public class BookController {
